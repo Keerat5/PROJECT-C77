@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, TextInput, TouchableOpacity, Alert } from 'react-native';
+import { StyleSheet, Text, View, TextInput, TouchableOpacity, Alert, Image } from 'react-native';
 import db from '../config.js'
 import firebase from 'firebase';
 import { render } from 'react-dom';
 
-export default class SignupLoginScreen extends Component{
-
+export default class SignupLoginScreen extends React.Component{
+    
     constructor(){
         super();
         this.state={
@@ -36,7 +36,7 @@ export default class SignupLoginScreen extends Component{
             var errorMessage=error.message;
             return Alert.alert(errorMessage)
         })
-    }    
+    }
 
     render(){
         return(
@@ -67,7 +67,7 @@ export default class SignupLoginScreen extends Component{
                     />
 
                     <TextInput
-                        style={styles.loginBox}
+                        style={styles.loginbox}
                         secureTextEntry={true}
                         placeholder="password"
                         placeholderTextColor="grey"
@@ -100,7 +100,6 @@ export default class SignupLoginScreen extends Component{
             </View>            
         )
     }
-
 }
 
 const styles = StyleSheet.create({
